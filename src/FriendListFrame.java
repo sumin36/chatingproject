@@ -84,7 +84,7 @@ public class FriendListFrame extends JFrame {
         // 하단 영역에 텍스트 추가
         JLabel NewLabel = new JLabel("");
         NewLabel.setBackground(new Color(255, 255, 255));
-        ImageIcon icon1 = new ImageIcon(getClass().getResource("/img/text3.png"));
+        ImageIcon icon1 = new ImageIcon(getClass().getResource("/img/text.png"));
         NewLabel.setText("<html><table><td width='120'></td><td><img src='" + icon1 + "'></td></table></html>");
         NewLabel.setOpaque(true);
         NewLabel.setHorizontalAlignment(SwingConstants.LEFT);
@@ -108,7 +108,7 @@ public class FriendListFrame extends JFrame {
         profile = new JLabel(""); // profile 레이블 초기화
         profile.setBackground(new Color(255, 255, 255));
         profile.setFont(new Font("휴먼모음T", Font.PLAIN, 15));
-        ImageIcon icon3 = new ImageIcon(getClass().getResource("/img/Profile2.png"));
+        ImageIcon icon3 = new ImageIcon(getClass().getResource("/img/Profile.png"));
 
         // 여기에서 userName을 동적으로 업데이트
         updateProfileName();
@@ -122,7 +122,7 @@ public class FriendListFrame extends JFrame {
 
     // 사용자 이름 업데이트 메소드
     private void updateProfileName() {
-        ImageIcon icon3 = new ImageIcon(getClass().getResource("/img/Profile2.png"));
+        ImageIcon icon3 = new ImageIcon(getClass().getResource("/img/Profile.png"));
         profile.setText("<html><table><tr><td><img src='" + icon3 + "'></td><td>" + userName + "</td></tr></table></html>");
     }
 
