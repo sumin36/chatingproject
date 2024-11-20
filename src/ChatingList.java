@@ -22,7 +22,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.SwingConstants;
 
-//수정
+//수정1
 public class ChatingList extends JFrame {
 
     private static final long serialVersionUID = 1L;

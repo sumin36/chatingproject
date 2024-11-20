@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 public class CreateNewChatRoomFrame extends JFrame {
-
+	//수정
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 

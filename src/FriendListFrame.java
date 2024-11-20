@@ -122,7 +122,7 @@ public class FriendListFrame extends JFrame {
 
     // 사용자 이름 업데이트 메소드
     private void updateProfileName() {
-        ImageIcon icon3 = new ImageIcon(getClass().getResource("/img/Profile.png"));
+        ImageIcon icon3 = new ImageIcon(getClass().getResource("/img/Profile//수정.png"));
         profile.setText("<html><table><tr><td><img src='" + icon3 + "'></td><td>" + userName + "</td></tr></table></html>");
     }
 

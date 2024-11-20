@@ -100,7 +100,7 @@ public class LoginFrame extends JFrame {
                     
                     // 서버에 이름 전송 (입장 메시지)
                     out.println(id);
-
+//수정
                     // 서버로부터 응답을 기다리는 부분 (예: "Name님이 입장하셨습니다.")
                     BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                     String serverMessage = in.readLine();

@@ -19,7 +19,7 @@ public class ReservationMessageFrame extends JFrame {
    private JTextField textField;
    private JLabel lblNewLabel_1;
    private JTextPane textPane;
-
+//수정
    /**
     * Launch the application.
     */

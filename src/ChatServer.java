@@ -21,7 +21,7 @@ public class ChatServer extends JFrame {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        });
+        });//수정
     }
 
     public ChatServer() {

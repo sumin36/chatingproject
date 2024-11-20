@@ -12,7 +12,7 @@ import java.awt.event.KeyEvent;
 import java.awt.Insets;
 
 public class SecretMessageFrame extends JFrame {
-
+    //수정
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
     private JTextField textField;

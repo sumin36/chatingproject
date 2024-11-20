@@ -62,7 +62,7 @@ public class ChatingRoomFrame extends JFrame {
         btnNewButton.setFont(new Font("휴먼모음T", Font.BOLD, 14));
         btnNewButton.setBounds(315, 470, 59, 32);
         contentPane.add(btnNewButton);
-        
+        //수정
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setBorder(new LineBorder(new Color(255, 255, 255)));
         scrollPane.setBounds(103, 44, 271, 416);
