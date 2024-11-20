@@ -1,32 +1,17 @@
-import java.awt.EventQueue;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import java.awt.*;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
-import java.awt.Font;
-import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.Objects;
 
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import java.awt.Color;
-import javax.swing.JPasswordField;
 import javax.swing.border.LineBorder;
-
-import ChatEx.JavaChatClientView;
 
 public class LoginFrame extends JFrame {
 
@@ -38,8 +23,6 @@ public class LoginFrame extends JFrame {
     private JLabel lblWelcome;
     private JPasswordField passwordField;
     private JLabel lblNewLabel_3;
-    private JLabel lblNewLabel_4;
-    private JLabel lblNewLabel_5;
     private JPasswordField portField;
     private Socket socket;
     private PrintWriter out;
@@ -67,13 +50,13 @@ public class LoginFrame extends JFrame {
 
         setContentPane(contentPane);
         contentPane.setLayout(null);
-        
+
         JLabel lblNewLabel = new JLabel("Yellow Chat");
         lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
         lblNewLabel.setBounds(0, 78, 386, 30);
         lblNewLabel.setFont(new Font("휴먼모음T", Font.BOLD, 22));
         contentPane.add(lblNewLabel);
-        
+
         textField = new JTextField();
         textField.setBorder(new LineBorder(new Color(255, 204, 102), 1, true));
         textField.setFont(new Font("휴먼모음T", Font.PLAIN, 13));
@@ -81,7 +64,7 @@ public class LoginFrame extends JFrame {
         textField.setBounds(99, 132, 183, 30);
         contentPane.add(textField);
         textField.setColumns(10);
-        
+
         JButton btnNewButton = new JButton("로그인");
         btnNewButton.setBorder(new LineBorder(new Color(255, 204, 102), 1, true));
         btnNewButton.setBackground(new Color(255, 255, 255));
@@ -97,10 +80,10 @@ public class LoginFrame extends JFrame {
                     // 서버와 연결
                     socket = new Socket("localhost", Integer.parseInt(port));
                     out = new PrintWriter(socket.getOutputStream(), true);
-                    
+
                     // 서버에 이름 전송 (입장 메시지)
                     out.println(id);
-//수정
+
                     // 서버로부터 응답을 기다리는 부분 (예: "Name님이 입장하셨습니다.")
                     BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                     String serverMessage = in.readLine();
@@ -122,34 +105,42 @@ public class LoginFrame extends JFrame {
         lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
         lblNewLabel_1.setBounds(37, 140, 50, 15);
         contentPane.add(lblNewLabel_1);
-        
+
         lblNewLabel_2 = new JLabel("PW");
         lblNewLabel_2.setFont(new Font("휴먼모음T", Font.BOLD, 15));
         lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
         lblNewLabel_2.setBounds(37, 190, 50, 15);
         contentPane.add(lblNewLabel_2);
-        
+
         lblNewLabel_3 = new JLabel("Port");
         lblNewLabel_3.setFont(new Font("휴먼모음T", Font.BOLD, 15));
         lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel_3.setBounds(37, 240, 50, 15);
+        lblNewLabel_3.setBounds(37, 245, 50, 15);
         contentPane.add(lblNewLabel_3);
-        
+
         lblWelcome = new JLabel("Welcome!");
         lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
         lblWelcome.setFont(new Font("휴먼모음T", Font.BOLD, 22));
         lblWelcome.setBounds(0, 38, 386, 30);
         contentPane.add(lblWelcome);
-        
+
         passwordField = new JPasswordField();
         passwordField.setBorder(new LineBorder(new Color(255, 204, 102), 1, true));
         passwordField.setBounds(99, 183, 183, 30);
         contentPane.add(passwordField);
-        
+
         portField = new JPasswordField();
         portField.setBorder(new LineBorder(new Color(255, 204, 102), 1, true));
         portField.setBounds(99, 237, 183, 30);
         contentPane.add(portField);
+
+        ImageIcon icon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/img/chat.png")));
+        Image img = icon.getImage();
+        Image updateImg=img.getScaledInstance(90, 90, Image.SCALE_SMOOTH);
+        ImageIcon updateIcon = new ImageIcon(updateImg);
+        JLabel imgLabel = new JLabel(updateIcon);
+        imgLabel.setBounds(123, 390, 125, 82);
+        contentPane.add(imgLabel);
     }
 
     private void appendText(String str) {

@@ -21,7 +21,7 @@ public class ChatServer extends JFrame {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        });//수정
+        });
     }
 
     public ChatServer() {
@@ -104,10 +104,9 @@ public class ChatServer extends JFrame {
                 in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 out = new PrintWriter(socket.getOutputStream(), true);
 
-                // 클라이언트 이름 입력 받기
                 while (true) {
                     name = in.readLine();
-                    out.println(name + "님이 들어왔습니다.");
+                    out.println(name+"님이 들어왔습니다.");
                     if (name == null) {
                         return;
                     }
@@ -115,11 +114,7 @@ public class ChatServer extends JFrame {
                         break;
                     }
                 }
-
-                // 클라이언트와 연결이 성공적으로 되었을 때, 서버 텍스트 영역에 출력
-                appendText(name + "님과 성공적으로 연결되었습니다.");
-
-                // 클라이언트 입장 메시지 브로드캐스트
+                
                 String joinMessage = name + "님이 들어왔습니다.";
                 broadcast(joinMessage);
 
@@ -151,11 +146,11 @@ public class ChatServer extends JFrame {
         }
     }
 
-    private void broadcast(String message) {
-        synchronized (clients) {
-            for (PrintWriter writer : clients) {
-                writer.println(message);
+        private void broadcast(String message) {
+            synchronized (clients) {
+                for (PrintWriter writer : clients) {
+                    writer.println(message);
+                }
             }
         }
     }
-}
